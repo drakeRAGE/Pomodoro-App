@@ -1,50 +1,82 @@
-# Welcome to your Expo app 👋
+# Pomodoro Timer
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This project is a React Native application that implements a Pomodoro Timer with additional features such as dark mode, motivational quotes, and sound notifications.
 
-## Get started
+## Light Mode 
 
-1. Install dependencies
+![WhatsApp Image 2024-09-25 at 00 14 54_772e5007](https://github.com/user-attachments/assets/f8e830f6-f850-4121-bcfc-070e09cc75e7)
 
-   ```bash
+## Dark Mode
+
+![WhatsApp Image 2024-09-25 at 00 14 53_a3232f82](https://github.com/user-attachments/assets/85407f8c-d57d-4db3-b928-2db28f8e009f)
+
+## Features
+
+- **Pomodoro Timer**: Work and break intervals with customizable durations.
+- **Dark Mode**: Toggle between light and dark themes.
+- **Motivational Quotes**: Display random motivational quotes during break times.
+- **Sound Notifications**: Play a sound when the timer starts and stops.
+- **Settings**: Customize work duration, break duration, and the number of sessions.
+
+## Installation
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/drakeRAGE/Pomodoro-App.git
+   cd pomodoro-App
+   ```
+
+2. Install dependencies:
+   ```sh
    npm install
    ```
 
-2. Start the app
-
-   ```bash
-    npx expo start
+3. Start the development server:
+   ```sh
+   npm expo start
    ```
 
-In the output, you'll find options to open the app in a
+## Usage
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+1. **Start/Pause Timer**: Tap the start button to begin the timer. Tap again to pause.
+2. **Reset Timer**: Tap the reset button to reset the timer to the initial state.
+3. **Toggle Dark Mode**: Tap the sun/moon icon to switch between light and dark modes.
+4. **Toggle Sound**: Tap the sound icon to enable or disable sound notifications.
+5. **Open Settings**: Tap the gear icon to open the settings menu where you can adjust work duration, break duration, and the number of sessions.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Code Overview
 
-## Get a fresh project
+### Main Components
 
-When you're ready, run:
+- **PomodoroTimer**: The main component that handles the timer logic, state management, and rendering.
+- **Settings**: A section within the main component to adjust timer settings.
 
-```bash
-npm run reset-project
-```
+### Key State Variables
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- `time`: The current time in seconds.
+- `isActive`: Boolean indicating if the timer is active.
+- `isDarkMode`: Boolean indicating if dark mode is enabled.
+- `showSettings`: Boolean indicating if the settings menu is visible.
+- `workDuration`: Duration of the work interval in minutes.
+- `breakDuration`: Duration of the break interval in minutes.
+- `mode`: Current mode of the timer (`work`, `break`, or `completed`).
+- `sessions`: Total number of work sessions.
+- `currentSession`: Current session number.
+- `progress`: Progress percentage of the current interval.
+- `soundEnabled`: Boolean indicating if sound notifications are enabled.
+- `showMotivationalQuote`: Boolean indicating if a motivational quote should be displayed.
+- `currentQuoteIndex`: Index of the current motivational quote.
 
-## Learn more
+### Styling
 
-To learn more about developing your project with Expo, look at the following resources:
+Styles are defined using JavaScript objects with properties in camelCase. The styles are applied using the `style` prop on React Native components.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Sound Management
 
-## Join the community
+Sound notifications are managed using the `expo-av` library. The sound is played when the timer starts and stops, and can be toggled on or off.
 
-Join our community of developers creating universal apps.
+## Learn More
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- [React Native Documentation](https://reactnative.dev/docs/getting-started)
+- [Expo Documentation](https://docs.expo.dev/)
+- [React Native Safe Area Context](https://github.com/th3rdwave/react-native-safe-area-context)
